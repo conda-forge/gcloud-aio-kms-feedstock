@@ -1,13 +1,13 @@
 {% set name = "gcloud-aio-kms" %}
-{% set version = "4.2.0" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 65bf55f0f35a580e58d79e77d2ed5bd8b6ffd4991a129ec9550021e31dfa32be
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gcloud_aio_kms-{{ version }}.tar.gz
+  sha256: 590583cb671ffb3166c9d8604921fbafb1c4182f2ea22462e3843f012c9381e1
 
 build:
   noarch: python
@@ -16,13 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7,<4.0
-    - pip
+    - python >=3.8,<4.0
     - poetry-core >=1.0.0
+    - pip
   run:
-    - python >=3.7,<4.0
-    - gcloud-aio-auth >=3.1.0,<5.0.0
-    - setuptools >=66.0.0,<67.0.0
+    - python >=3.8,<4.0
+    - gcloud-aio-auth >=3.1.0,<6.0.0
 
 test:
   imports:
