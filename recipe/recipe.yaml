@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gcloud-aio-kms
-  version: 5.0.0
+  version: "5.1.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,18 +10,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gcloud_aio_kms-${{ version }}.tar.gz
-  sha256: 590583cb671ffb3166c9d8604921fbafb1c4182f2ea22462e3843f012c9381e1
+  sha256: 6b92cbd53fa41ed3d3d4c02c43efa266a49b8fa317f85d5d0426f719676fa9ae
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python ${{ python_min }}.*
-    - poetry-core >=1.0.0
     - pip
+    - poetry-core >=1.0.0
   run:
     - python >=${{ python_min }},<4.0
     - gcloud-aio-auth >=3.1.0,<6.0.0
